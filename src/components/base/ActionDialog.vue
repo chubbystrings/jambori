@@ -75,22 +75,17 @@ export default {
   methods: {
 
     startDrag(evt, index) {
-      console.log(index);
       const { dataTransfer } = evt;
-      console.log(evt);
       dataTransfer.dropEffect = 'move';
       dataTransfer.effectAllowed = 'move';
       dataTransfer.setData('subIndex', index);
     },
 
     onDrop(evt) {
-      console.log(evt);
       const subIndex = Number(evt.dataTransfer.getData('subIndex'));
       const subject = this.selectedSubjects.subjects[subIndex];
       const sub = this.selectedSubjects.subjects.find((item) => item === subject);
-      console.log(sub);
       const dropIndex = this.selectedSubjects.subjects.indexOf(evt.target.innerText);
-      console.log(dropIndex);
       const data = {
         sub,
         dropIndex,

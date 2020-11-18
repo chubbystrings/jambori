@@ -160,7 +160,6 @@ export default {
     // calculate progress or attempts by student
     calculateProgress() {
       this.currentProgress = Math.floor((100 / this.totalQuestions) * this.allQuestions.length);
-      console.log(this.allQuestions.length);
     },
 
     // Method to compare answer selected by student if correct
@@ -168,14 +167,10 @@ export default {
       this.tests.questions[0].answerSelected = value;
       const answer = this.tests.questions[0].option[this.tests.questions[0].answer];
       this.countQuestions += 1;
-      console.log(answer);
-      console.log(question);
       if (answer === question) {
-        console.log('Good');
         this.tests.questions[0].accuracy = 'correct';
         this.correctAnswers += 1;
       } else {
-        console.log('wrong');
         this.tests.questions[0].accuracy = 'wrong';
       }
       this.saveAnswer();
@@ -206,7 +201,6 @@ export default {
     // Method to move to next question and check if student has compeleted subjec's questions
     nextQuestion() {
       if (this.countQuestions === this.questionsPerSubject) {
-        console.log('end');
         this.allQuestions.push(this.tests.questions[0]);
         this.calculateProgress();
         const sub = this.jamboriSubjects[0];
@@ -242,14 +236,12 @@ export default {
       const data = {
         missing: false,
       };
-      console.log(this.checkMissingScript());
       if (this.checkMissingScript()) {
         data.missing = true;
         this.getMisingSubjects();
         this.$store.commit('RESULT_DIALOG', data);
       } else {
         this.totalScore = this.eachSubScore.reduce((a, b) => a + b.score, 0);
-        console.log(this.totalScore);
         data.results = this.eachSubScore;
         data.score = this.totalScore;
         data.missing = false;
@@ -270,8 +262,6 @@ export default {
           this.missingScripts.push(sub);
         }
       });
-      console.log(subjectedAttempted);
-      console.log(this.missingScripts);
       const data = {
         attempted: subjectedAttempted,
         missing: this.missingScripts,
@@ -360,7 +350,6 @@ export default {
 
     showQuestionsCount() {
       const number = this.questionsPerSubject + 1;
-      console.log(Object.keys(this.jamboriData).length);
       if (Object.keys(this.jamboriData).length > 0) {
         return `${number - this.tests.questions.length}/${this.questionsPerSubject} `;
       }
@@ -373,8 +362,6 @@ export default {
       const subject = this.jamboriData.subjects[0];
       this.examType = this.jamboriData.type;
       this.jamboriSubjects = [...this.jamboriData.subjects];
-      console.log(this.jamboriSubjects);
-      console.log(this.examType);
       // load subject as selected by user
       this.loadQuestions(subject, this.examType);
     } catch (error) {

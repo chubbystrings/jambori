@@ -57,11 +57,9 @@ export default new Vuex.Store({
 
     REARRANGE_SELECTIONS(state, data) {
       const { sub, dropIndex } = data;
-      console.log(state.selectedSubjects.subjects);
       const index = state.selectedSubjects.subjects.indexOf(sub);
       state.selectedSubjects.subjects.splice(index, 1);
       state.selectedSubjects.subjects.splice(dropIndex, 0, sub);
-      console.log(state.selectedSubjects.subjects);
     },
 
     RESULT_DIALOG(state, data) {
@@ -110,7 +108,6 @@ export default new Vuex.Store({
       const { attempted, missing } = data;
       state.attemptedScripts = attempted;
       state.missingSubjects = [...missing];
-      console.log(state.missingSubjects);
     },
 
     CLEAR_DATA(state) {

@@ -201,7 +201,6 @@ export default {
       ];
       this.gameId = uuid.v1();
       this.token = valid.createToken(this.gameId);
-      console.log(this.token);
       this.formData.year = this.yearSelect;
       this.formData.subjects = [...subjects];
       this.formData.type = this.examTypeSelect;
@@ -226,7 +225,6 @@ export default {
         gameId: this.gameId,
         token: this.token,
       };
-      console.log(data);
       this.$store.dispatch('startGame', data);
       this.$router.push({ name: 'Game', params: { id: this.gameId } });
     },
@@ -268,7 +266,6 @@ export default {
     },
 
     loadElectives() {
-      console.log(this.studentSelect);
       switch (this.studentSelect) {
         case 'Science':
           this.electives = this.science;
@@ -293,8 +290,6 @@ export default {
     this.generateYear(2001, 2015);
     this.autoSelectYear();
     this.autoSelectExamType();
-    console.log(this.yearSelect);
-    console.log(this.examTypeSelect);
   },
 };
 </script>

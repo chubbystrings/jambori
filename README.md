@@ -1,7 +1,10 @@
 # jambori
 
 ```
-enjoy yourself while learning, jambori app is a senior secondary school quiz app with subjects like Mathematics, English, Chemistry etc. Built specifically for students who are preparing for Jamb but can also be played by anyone. Enjoy youself
+enjoy yourself while learning, jambori app is a\  senior secondary school quiz app with subjects like\  Mathematics, English, Chemistry etc. Built\  specifically for students who are preparing for Jamb\  
+but can also be played by anyone. Enjoy youself
+
+<https://jambori-c202b.web.app>
 ```
 
 ## Project setup
