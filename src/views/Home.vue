@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home text-center">
+    <img @load="onload" alt="Jambori logo" src="../assets/logo2.png">
+    <Home v-if="loadNow" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
-  name: 'Home',
   components: {
-    HelloWorld,
+    Home: () => import('../components/HomeComponent.vue'),
+  },
+  data: () => ({
+    loadNow: false,
+  }),
+  methods: {
+    onload() {
+      this.loadNow = true;
+    },
   },
 };
 </script>
