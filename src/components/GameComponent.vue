@@ -350,7 +350,7 @@ export default {
 
     showQuestionsCount() {
       const number = this.questionsPerSubject + 1;
-      if (Object.keys(this.jamboriData).length > 0) {
+      if (Object.keys(this.jamboriData).length > 0 && this.tests.questions.length > 0) {
         return `${number - this.tests.questions.length}/${this.questionsPerSubject} `;
       }
       return '';
