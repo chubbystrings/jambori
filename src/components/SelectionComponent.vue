@@ -291,6 +291,14 @@ export default {
     this.autoSelectYear();
     this.autoSelectExamType();
   },
+
+  watch: {
+    yearSelect() {
+      if (this.yearSelect === '') {
+        this.autoSelectYear();
+      }
+    },
+  },
 };
 </script>
 <style scoped>
