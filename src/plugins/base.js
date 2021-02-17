@@ -6,6 +6,7 @@ import BaseSubHeading from '@/components/base/SubHeading.vue';
 import BaseBtn from '@/components/base/Btn.vue';
 import BaseSmallBtn from '@/components/base/SmallBtn.vue';
 import BaseDialog from '@/components/base/ActionDialog.vue';
+import BaseCard from '@/components/base/BaseCard.vue';
 
 Vue.component(BaseText.name, BaseText);
 Vue.component(BaseSmallText.name, BaseSmallText);
@@ -14,3 +15,4 @@ Vue.component(BaseSubHeading.name, BaseSubHeading);
 Vue.component(BaseBtn.name, BaseBtn);
 Vue.component(BaseSmallBtn.name, BaseSmallBtn);
 Vue.component(BaseDialog.name, BaseDialog);
+Vue.component(BaseCard.name, BaseCard);

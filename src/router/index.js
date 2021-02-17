@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import confirm from '../utils/confirmToken';
+import NotFound from '../views/NotFound.vue';
 
 Vue.use(VueRouter);
 
@@ -30,8 +31,8 @@ const routes = [
   },
 
   {
-    path: '*',
-    redirect: '/',
+    path: '/:notFound(.*)',
+    component: NotFound,
   },
 ];
 
