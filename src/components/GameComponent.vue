@@ -118,7 +118,7 @@ export default {
       this.subjectProgressCount.push(subject);
       const examYear = `${this.jamboriData.year}`;
       this.$store.commit('LOADER_ON', `setting ${sub} questions`);
-      const url = `/api/q/${this.questionsPerSubject}?subject=${sub}&year=${examYear}&type=${type}`;
+      const url = `/q/${this.questionsPerSubject}?subject=${sub}&year=${examYear}&type=${type}`;
       instance.get(url)
         .then((res) => {
           this.tests.subject = res.data.subject;
